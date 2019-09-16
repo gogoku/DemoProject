@@ -44,6 +44,7 @@ export default class ActionSheet extends PureComponent {
         const { visible } = this.props
         const { slideIn } = this.state
         if (visible && !prevProps.visible) {
+            // on receiving visible true animation to bring the action sheet to user viewing is triggered
             Animated.timing(slideIn, {
                 toValue: 1,
                 duration: 250,
@@ -60,6 +61,7 @@ export default class ActionSheet extends PureComponent {
    */
 
     getActions = () => {
+        // renders the actions passed as prop
         const { actions = [] } = this.props
         return actions.map((action, index) => {
             if (action.handler) {
@@ -80,6 +82,7 @@ export default class ActionSheet extends PureComponent {
     }
 
     renderHeader = () => {
+        //renders the header of the action
         const { header } = this.props
         return (
             <View style={styles.actionContainer}>
@@ -97,6 +100,7 @@ export default class ActionSheet extends PureComponent {
 
 
     setHeight = (ev) => {
+        // sets the measured height of the rendered actions
         this.setState({
             height: ev.nativeEvent.layout.height + 100
         })

@@ -4,25 +4,37 @@ import ActionSheet from '../../components/ActionSheet/ActionSheet'
 import styles from './styles'
 
 export default function ActionSheetDemo() {
+  //Action sheet demo controls the visibility of action sheet and passes the actions to display
+
   const [actionSheetVisible, setVisibility] = useState(false);
 
   const showActionSheet = () => {
+    //sets visible property of action sheet to true, to display action sheet
     setVisibility(true)
   }
 
   const hideActionSheet = () => {
+    //sets visible property of action sheet to false, to hide action sheet
     setVisibility(false)
   }
 
   const yesHandler = () => {
+    //handles on pressing yes action and displays an alert
     hideActionSheet()
     Alert.alert('You have pressed yes action')
   }
 
   const noHandler = () => {
+        //handles on pressing no action and displays an alert
     hideActionSheet()
     Alert.alert('You have pressed no action')
   }
+
+  /*
+  actions needed is passed as a json
+  label: Name of action
+  handler: Function to call on pressing the action 
+  */
 
   const actions = [{
     label: "Yes",

@@ -3,8 +3,9 @@ import { View, Text, TouchableNativeFeedback } from 'react-native'
 import styles from './styles'
 
 export default function Home(props){
-
+  //Home Screen Component Displays List of components available
   const navigateToActionSheet = () => {
+    //funtion to navigate to component action sheet demo
     const { navigation } = props;
     navigation.navigate('ActionSheetDemo')
   }
